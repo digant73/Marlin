@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Artillery Sidewinder X1"      // DIGA-Tech:
+#define CUSTOM_MACHINE_NAME "Artillery Genius"      // Riffer:
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -906,7 +906,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-#define ENDSTOP_NOISE_THRESHOLD 2                          // DIGA-Tech:
+//#define ENDSTOP_NOISE_THRESHOLD 2                          // DIGA-Tech:
 
 // Check for stuck or disconnected endstops during homing moves.
 //#define DETECT_BROKEN_ENDSTOP
@@ -1041,7 +1041,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                 // DIGA-Tech: enabled due to usage of probe on Z min endstop
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                 // DIGA-Tech: enabled due to usage of probe on Z min endstop
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING                             // DIGA-Tech: enabled to use probe also for homing
@@ -1061,7 +1061,9 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-//#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default          // DIGA-Tech:
+//#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default           // DIGA-Tech:
+#define Z_MIN_PROBE_PIN 19 // Pin 19 is the Genius option             // Riffer:
+#define Z_MAX_PROBE_PIN 18 // Unused but to reflect the above change  // Riffer:
 
 /**
  * Probe Type
@@ -1258,10 +1260,10 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE   15 // Z Clearance for Deploy/Stow  // Riffer:
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-//#define Z_AFTER_PROBING           5 // Z position after probing is done
+#define Z_AFTER_PROBING           15 // Z position after probing is done //Riffer:
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
@@ -1380,16 +1382,16 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 305                                     // DIGA-Tech:
-#define Y_BED_SIZE 305                                     // DIGA-Tech:
+#define X_BED_SIZE 225                                     // Riffer:
+#define Y_BED_SIZE 225                                     // Riffer:
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -3                                       // DIGA-Tech:
-#define Y_MIN_POS -3                                       // DIGA-Tech:
+#define X_MIN_POS 0                                       // Riffer:
+#define Y_MIN_POS 0                                       // Riffer:
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 400                                      // DIGA-Tech:
+#define Z_MAX_POS 250                                      // Riffer:
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -1751,8 +1753,11 @@
 #define Z_SAFE_HOMING                                      // DIGA-Tech:
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
-  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
+//  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing    // DIGA-Tech:
+//  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing    // DIGA-Tech:
+  #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // Riffer:
+  #define Z_SAFE_HOMING_Y_POINT ((Y_BED_SIZE) / 2)    // Riffer:
+
 #endif
 
 // Homing speeds (mm/min)
