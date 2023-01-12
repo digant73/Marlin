@@ -537,12 +537,8 @@
  */
 #define USE_CONTROLLER_FAN                                 // DIGA-Tech:
 #if ENABLED(USE_CONTROLLER_FAN)
-<<<<<<< HEAD
-  //#define CONTROLLER_FAN_PIN -1           // Set a custom pin for the controller fan
-  //#define CONTROLLER_FAN2_PIN -1          // Set a custom pin for second controller fan
-=======
   #define CONTROLLER_FAN_PIN FAN1_PIN       // Set a custom pin for the controller fan   // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
+  //#define CONTROLLER_FAN2_PIN -1          // Set a custom pin for second controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
   //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
@@ -884,12 +880,8 @@
 #define HOMING_BUMP_MM      { 0, 0, 2 }       // (linear=mm, rotational=°) Backoff from endstops after first bump                // DIGA-Tech:
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-<<<<<<< HEAD
-//#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (linear=mm, rotational=°) Backoff from endstops after homing
-//#define XY_COUNTERPART_BACKOFF_MM 0         // (mm) Backoff X after homing Y, and vice-versa
-=======
 #define HOMING_BACKOFF_POST_MM { 5, 5, 2 }    // (linear=mm, rotational=°) Backoff from endstops after homing                    // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
+//#define XY_COUNTERPART_BACKOFF_MM 0         // (mm) Backoff X after homing Y, and vice-versa
 
 //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first                                       // DIGA-Tech:
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
@@ -1455,12 +1447,6 @@
   // On the Info Screen, display XY with one decimal place when possible
   //#define LCD_DECIMAL_SMALL_XY
 
-<<<<<<< HEAD
-=======
-  // Add an 'M73' G-code to set the current percentage
-  #define LCD_SET_PROGRESS_MANUALLY                        // DIGA-Tech:
-
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
 
@@ -1493,7 +1479,7 @@
 #endif // HAS_DISPLAY || DWIN_LCD_PROUI
 
 // Add 'M73' to set print job progress, overrides Marlin's built-in estimate
-//#define SET_PROGRESS_MANUALLY
+#define SET_PROGRESS_MANUALLY                              // DIGA-Tech:
 #if ENABLED(SET_PROGRESS_MANUALLY)
   #define SET_PROGRESS_PERCENT            // Add 'P' parameter to set percentage done
   #define SET_REMAINING_TIME              // Add 'R' parameter to set remaining time
@@ -1644,14 +1630,9 @@
   // LCD's font must contain the characters. Check your selected LCD language.
   //#define UTF_FILENAME_SUPPORT
 
-<<<<<<< HEAD
-  //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
-  //#define LONG_FILENAME_WRITE_SUPPORT   // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol
-  //#define M20_TIMESTAMP_SUPPORT         // Include timestamps by adding the 'T' flag to M20 commands
-=======
   #define LONG_FILENAME_HOST_SUPPORT      // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'        // DIGA-Tech:
   #define LONG_FILENAME_WRITE_SUPPORT     // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol                    // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
+  //#define M20_TIMESTAMP_SUPPORT         // Include timestamps by adding the 'T' flag to M20 commands
 
   #define SCROLL_LONG_FILENAMES           // Scroll long filenames in the SD card menu             // DIGA-Tech:
 
@@ -2126,24 +2107,16 @@
  */
 #define LIN_ADVANCE                                        // DIGA-Tech:
 #if ENABLED(LIN_ADVANCE)
-<<<<<<< HEAD
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 0.22        // (mm) Compression length applying to all extruders
+    #define ADVANCE_K 0.0         // (mm) Compression length applying to all extruders   // DIGA-Tech:
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
   //#define EXPERIMENTAL_SCURVE   // Allow S-Curve Acceleration to be used with LA.
   //#define ALLOW_LOW_EJERK       // Allow a DEFAULT_EJERK value of <10. Recommended for direct drive hotends.
   //#define EXPERIMENTAL_I2S_LA   // Allow I2S_STEPPER_STREAM to be used with LA. Performance degrades as the LA step rate reaches ~20kHz.
-=======
-  //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-  #define LIN_ADVANCE_K 0.0     // Unit: mm compression per 1mm/s extruder speed         // DIGA-Tech:
-  //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
-  //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
-  //#define ALLOW_LOW_EJERK     // Allow a DEFAULT_EJERK value of <10. Recommended for direct drive hotends.
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
 #endif
 
 // @section leveling
@@ -2743,19 +2716,11 @@
    */
   #define INTERPOLATE      true
 
-<<<<<<< HEAD
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
-    #define X_MICROSTEPS     16        // 0..256
-    #define X_RSENSE          0.11     // Multiplied x1000 for TMC26X
-=======
-  #if AXIS_IS_TMC(X)
     #define X_CURRENT      1050        // (mA) RMS current. Multiply by 1.414 for peak current.    // DIGA-Tech:
     #define X_CURRENT_HOME  350        // (mA) RMS current for sensorless homing                   // DIGA-Tech:
     #define X_MICROSTEPS     16        // 0..256
-    #define X_RSENSE          0.15                                                                 // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
+    #define X_RSENSE          0.15     // Multiplied x1000 for TMC26X                              // DIGA-Tech:
     #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
     //#define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
     //#define X_HOLD_MULTIPLIER 0.5    // Enable to override 'HOLD_MULTIPLIER' for the X axis
@@ -2771,15 +2736,9 @@
     //#define X2_HOLD_MULTIPLIER 0.5
   #endif
 
-<<<<<<< HEAD
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       800
-    #define Y_CURRENT_HOME  Y_CURRENT
-=======
-  #if AXIS_IS_TMC(Y)
     #define Y_CURRENT      1150                            // DIGA-Tech:
     #define Y_CURRENT_HOME  350                            // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.15                         // DIGA-Tech:
     #define Y_CHAIN_POS      -1
@@ -2797,13 +2756,8 @@
     //#define Y2_HOLD_MULTIPLIER 0.5
   #endif
 
-<<<<<<< HEAD
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       800
-=======
-  #if AXIS_IS_TMC(Z)
     #define Z_CURRENT      1050                            // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.15                         // DIGA-Tech:
@@ -2812,13 +2766,8 @@
     //#define Z_HOLD_MULTIPLIER 0.5
   #endif
 
-<<<<<<< HEAD
   #if AXIS_IS_TMC_CONFIG(Z2)
-    #define Z2_CURRENT      800
-=======
-  #if AXIS_IS_TMC(Z2)
     #define Z2_CURRENT     1050                            // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.15                         // DIGA-Tech:
@@ -2907,13 +2856,8 @@
     //#define W_HOLD_MULTIPLIER 0.5
   #endif
 
-<<<<<<< HEAD
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      800
-=======
-  #if AXIS_IS_TMC(E0)
     #define E0_CURRENT      800                            // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.15                         // DIGA-Tech:
     #define E0_CHAIN_POS     -1

@@ -833,7 +833,7 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-//#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
+#define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
 #define EXTRUDE_MINTEMP 170
 
 /**
@@ -3142,14 +3142,12 @@
 #define TFT_COLOR_UI                                       // DIGA-Tech:
 //#define TFT_LVGL_UI
 
-<<<<<<< HEAD
+// Biqu BX Dark Theme
+#define COLOR_BACKGROUND COLOR_DARK                        // DIGA-Tech:
+
 #if ENABLED(TFT_COLOR_UI)
   //#define TFT_SHARED_SPI   // SPI is shared between TFT display and other devices. Disable async data transfer
 #endif
-=======
-// Biqu BX Dark Theme
-#define COLOR_BACKGROUND    COLOR_DARK                     // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
 
 #if ENABLED(TFT_LVGL_UI)
   //#define MKS_WIFI_MODULE  // MKS WiFi module
@@ -3323,12 +3321,8 @@
   #if ENABLED(NEOPIXEL2_SEPARATE)
     #define NEOPIXEL2_PIXELS            2 // Number of LEDs in the second strip                                                  // DIGA-Tech:
     #define NEOPIXEL2_BRIGHTNESS      127 // Initial brightness (0-255)
-<<<<<<< HEAD
-    #define NEOPIXEL2_STARTUP_TEST        // Cycle through colors at startup
-    #define NEOPIXEL_M150_DEFAULT      -1 // Default strip for M150 without 'S'. Use -1 to set all by default.
-=======
     //#define NEOPIXEL2_STARTUP_TEST      // Cycle through colors at startup                                                     // DIGA-Tech:
->>>>>>> 68408bf7abf631e518a4e8f875967e1b5e6bffa2
+    #define NEOPIXEL_M150_DEFAULT      -1 // Default strip for M150 without 'S'. Use -1 to set all by default.
   #else
     //#define NEOPIXEL2_INSERIES          // Default behavior is NeoPixel 2 in parallel
   #endif
