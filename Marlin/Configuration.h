@@ -834,7 +834,8 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
-#define EXTRUDE_MINTEMP 170
+//#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 20                                 // temp value
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
