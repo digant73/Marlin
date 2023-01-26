@@ -1484,7 +1484,7 @@
   #define SET_PROGRESS_PERCENT            // Add 'P' parameter to set percentage done
   #define SET_REMAINING_TIME              // Add 'R' parameter to set remaining time
   //#define SET_INTERACTION_TIME          // Add 'C' parameter to set time until next filament change or other user interaction
-  //#define M73_REPORT                    // Report M73 values to host
+  #define M73_REPORT                      // Report M73 values to host         // DIGA-Tech:
   #if BOTH(M73_REPORT, SDSUPPORT)
     #define M73_REPORT_SD_ONLY            // Report only when printing from SD
   #endif
