@@ -619,7 +619,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 350                               // DIGA-Tech:
+#define HEATER_0_MAXTEMP 275                               // DIGA-Tech:
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -834,8 +834,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION                             // DIGA-Tech:
-//#define EXTRUDE_MINTEMP 170
-#define EXTRUDE_MINTEMP 20                                 // temp value
+#define EXTRUDE_MINTEMP 20                                 // DIGA-Tech:
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -2474,7 +2473,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-#define SDSUPPORT                                          // DIGA-Tech:
+//#define SDSUPPORT                                          // DIGA-Tech:
 
 /**
  * SD CARD: ENABLE CRC
@@ -2498,7 +2497,7 @@
 // This option overrides the default number of encoder pulses needed to
 // produce one step. Should be increased for high-resolution encoders.
 //
-#define ENCODER_PULSES_PER_STEP 2                          // DIGA-Tech:
+//#define ENCODER_PULSES_PER_STEP 2                          // DIGA-Tech:
 
 //
 // Use this option to override the number of step signals required to
@@ -2745,7 +2744,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER      // DIGA-Tech:
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER      // DIGA-Tech:
 
 //
 // K.3D Full Graphic Smart Controller
