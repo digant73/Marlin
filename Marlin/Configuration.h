@@ -2473,7 +2473,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-//#define SDSUPPORT                                          // DIGA-Tech:
+#define SDSUPPORT                                          // DIGA-Tech:
 
 /**
  * SD CARD: ENABLE CRC
@@ -2497,7 +2497,7 @@
 // This option overrides the default number of encoder pulses needed to
 // produce one step. Should be increased for high-resolution encoders.
 //
-//#define ENCODER_PULSES_PER_STEP 2                          // DIGA-Tech:
+#define ENCODER_PULSES_PER_STEP 2                          // DIGA-Tech:
 
 //
 // Use this option to override the number of step signals required to
@@ -2744,7 +2744,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER      // DIGA-Tech:
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER      // DIGA-Tech:
 
 //
 // K.3D Full Graphic Smart Controller
