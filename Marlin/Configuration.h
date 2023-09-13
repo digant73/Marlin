@@ -111,7 +111,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200                                                        // DIGA-Tech:
+#define BAUDRATE 250000                                                        // DIGA-Tech:
 
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate         // DIGA-Tech:
 
