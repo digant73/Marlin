@@ -4218,7 +4218,7 @@
 //
 // M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
 //
-#define PINS_DEBUGGING                                     // DIGA-Tech:
+//#define PINS_DEBUGGING                                     // DIGA-Tech:
 
 // Enable Tests that will run at startup and produce a report
 //#define MARLIN_TEST_BUILD
