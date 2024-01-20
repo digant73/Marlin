@@ -1662,9 +1662,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    5 // (mm) Z Clearance for Deploy/Stow                // DIGA-Tech:
-#define Z_CLEARANCE_BETWEEN_PROBES  2 // (mm) Z Clearance between probe points           // DIGA-Tech:
-#define Z_CLEARANCE_MULTI_PROBE     3 // (mm) Z Clearance between multiple probes        // DIGA-Tech:
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // (mm) Z Clearance for Deploy/Stow                                    // DIGA-Tech:
+#define Z_CLEARANCE_BETWEEN_PROBES  2 // (mm) Z Clearance between probe points                               // DIGA-Tech:
+#define Z_CLEARANCE_MULTI_PROBE     3 // (mm) Z Clearance between multiple probes                            // DIGA-Tech:
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
 //#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
 
@@ -2278,7 +2278,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (6*60) }            // DIGA-Tech:
+#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (6*60) }                      // DIGA-Tech:
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS

@@ -2315,7 +2315,7 @@
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 0.0         // (mm) Compression length applying to all extruders   // DIGA-Tech:
+    #define ADVANCE_K 0.0         // (mm) Compression length applying to all extruders             // DIGA-Tech:
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
@@ -3914,7 +3914,7 @@
  * M115 - Report capabilites. Disable to save ~1150 bytes of flash.
  *        Some hosts (and serial TFT displays) rely on this feature.
  */
-#define CAPABILITIES_REPORT
+#define CAPABILITIES_REPORT                                // DIGA-Tech:
 #if ENABLED(CAPABILITIES_REPORT)
   // Include capabilities in M115 output
   #define EXTENDED_CAPABILITIES_REPORT                     // DIGA-Tech:
